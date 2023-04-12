@@ -28,6 +28,19 @@ namespace ACMELegalApp.Controllers
             }
         }
 
+        // ToDo: Add a method to get a single case by ID
+        public IActionResult Details(int id) 
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                var cases = connection.Query<Case>("GetAllCases", commandType: CommandType.StoredProcedure).ToList();
+
+                return View(cases.FirstOrDefault(c => c.CaseID == id));
+            }
+        }
+
         [HttpGet]
         public IActionResult GetAllCases()
         {

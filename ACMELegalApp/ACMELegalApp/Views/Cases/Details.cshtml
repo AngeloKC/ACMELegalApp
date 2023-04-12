@@ -1,0 +1,32 @@
+﻿@model ACMELegalApp.Models.Case
+
+<h1>Case Details</h1>
+
+<table class="table">
+    <tr>
+        <td>Case Number:</td>
+        <td>@Model.CaseNumber</td>
+    </tr>
+    <tr>
+        <td>Case Name:</td>
+        <td>@Model.CaseName</td>
+    </tr>
+    <tr>
+        <td>Description:</td>
+        <td>@Model.CaseDescription</td>
+    </tr>
+    <tr>
+        <td>Status:</td>
+        <td>@Model.Status</td>
+    </tr>
+    <tr>
+        <td>Assigned To:</td>
+        <td>@Model.AssignedTo</td>
+    </tr>
+    <tr>
+        <td>Filing Date:</td>
+        <td>@Model.FilingDate</td>
+    </tr>
+</table>
+
+<a asp-action="Index">Back to List</a>
