@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ACMELegalApp",
+    "\\ACMELegalApp\\ACMELegalApp",
+    "\\ACMELegalApp\\ACMELegalApp\\Controllers",
+    "\\ACMELegalApp\\ACMELegalApp\\Models"
+  ],
+  "SelectedNode": "\\ACMELegalApp\\ACMELegalApp\\Models\\CaseViewModel.cs",
+  "PreviewInSolutionExplorer": false
+}

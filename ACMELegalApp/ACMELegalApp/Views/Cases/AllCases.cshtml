@@ -1,0 +1,55 @@
+﻿@model List<ACMELegalApp.Models.Case>
+
+<h1 class="mt-4 mb-3">All Cases</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Case Number</th>
+                        <th>Case Name</th>
+                        <th>Case Description</th>
+                        <th>Filing Date</th>
+                        <th>Status</th>
+                        <th>Assigned To</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var caseItem in Model)
+                    {
+                        <tr>
+                            <td>@caseItem.CaseNumber</td>
+                            <td>@caseItem.CaseName</td>
+                            <td>@caseItem.CaseDescription</td>
+                            <td>@caseItem.FilingDate.ToShortDateString()</td>
+                            <td>@caseItem.Status</td>
+                            <td>@caseItem.AssignedTo</td>
+                            <td>
+                                <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@caseItem.CaseID">Edit</a>
+                                <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@caseItem.CaseID">Details</a>
+                                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@caseItem.CaseID">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<marquee>
+    There are currently <span id="pendingCount">10</span> cases in a pending status.
+</marquee>
+
+@section scripts {
+    <script>
+        // Replace this with code to retrieve the actual pending case count from the server
+        var pendingCount = 10;
+
+        // Update the value displayed in the marquee
+        document.getElementById("pendingCount").textContent = pendingCount;
+    </script>
+}
